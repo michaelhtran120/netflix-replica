@@ -20,6 +20,7 @@
   max-height: 150px;
   transition: transform 450ms;
   margin-right: 10px;
+  cursor:pointer;
 }
 
 .row-poster:hover {

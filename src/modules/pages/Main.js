@@ -1,13 +1,14 @@
 import React from "react";
 import Banner from "../component/Banner";
 import Row from "../component/Row";
+import Nav from "../component/Nav";
 
 import requests from "../../requests";
 
 const Main = () => {
   return (
     <div>
-      {/*navbar*/}
+      <Nav />
       <Banner />
       <Row
         title='Netflix Originals'
