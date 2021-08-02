@@ -1,10 +1,12 @@
 import "./App.css";
-import Landing from "./modules/pages/Landing";
+import Main from "./modules/pages/Main";
+// import Landing from "./modules/pages/Landing";
 
 function App() {
   return (
     <div className='App'>
-      <Landing />
+      <Main />
+      {/* <Landing /> */}
     </div>
   );
 }
