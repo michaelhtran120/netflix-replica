@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link, useHistory } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext'
 import logo from "../../images/logo.svg";
 import avatar from "../../images/avatar.png";
 import "../../css/nav.css";
@@ -6,6 +8,9 @@ import "../../css/nav.css";
 const Nav = () => {
   const [show, setShow] = useState(false);
   const [display, setDisplay] = useState('none')
+  const [error, setError] = useState('')
+  const { currentUser, logout } = useAuth()
+  const history = useHistory()
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -25,6 +30,18 @@ const Nav = () => {
       setDisplay('none')
     }
   }
+
+  async function handleLogOut () {
+    setError('')
+
+    try{
+      await logout()
+      history.push('/')
+    } catch {
+      setError('')
+    }
+
+  }
   return (
     <div className={`nav ${show && "nav-black"}`}>
       <div className='nav-links'>
@@ -39,8 +56,10 @@ const Nav = () => {
       </div>
       <img className='avatar' src={avatar} alt='avatar' onClick={handleClick}/>
       <div className='avatar-module' style={{display:`${display}`}}>
+        <p>{currentUser.email}</p>
+        <hr/>
         <p>Account</p>
-        <p>Log Out</p>
+        <Link to='/'><p onClick={handleLogOut}>Log Out</p></Link>
       </div>
     </div>
   );

@@ -8,7 +8,9 @@
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 8px 15px;
+  margin-bottom: 40px;
 }
+
 
 .row-poster::-webkit-scrollbar {
   display: none;
@@ -30,3 +32,4 @@
 .row-posterLarge {
   max-height: 250px;
 }
+

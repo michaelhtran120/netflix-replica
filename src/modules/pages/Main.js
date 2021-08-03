@@ -1,13 +1,15 @@
 import React from "react";
+import "../../css/main.css"
 import Banner from "../component/Banner";
 import Row from "../component/Row";
 import Nav from "../component/Nav";
+import Footer from "../component/Footer"
 
-import requests from "../../requests";
+import requests from "../../configs/requests";
 
 const Main = () => {
   return (
-    <div>
+    <div className='main-container'>
       <Nav />
       <Banner />
       <Row
@@ -21,6 +23,7 @@ const Main = () => {
       <Row title='Horror' fetchUrl={requests.fetchHorrorMovies} />
       <Row title='Romance' fetchUrl={requests.fetchRomanceMovies} />
       <Row title='Documentaries' fetchUrl={requests.fetchDocumentaries} />
+      <Footer/>
     </div>
   );
 };
