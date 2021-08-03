@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react'
+import background from "../../images/landing-background.jpg";
 import '../../css/signup.css'
 import {useAuth} from '../../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
@@ -32,8 +33,10 @@ const Signup = () => {
     }
 
     return (
+        <div>
+            <img className='signup-background' src={background} alt='background' />
             <div className='signup-container'>
-                <h1>Sign Up</h1>
+                <h1 className='signup-title'>Sign Up</h1>
                 <p>{currentUser && currentUser.email}</p>
                 {error && <p>{error}</p>}
                 <form onSubmit={handleSubmit}>
@@ -51,6 +54,7 @@ const Signup = () => {
                 </form>
                 <p>Already have an account?</p><Link to='/login'><p>Log In</p></Link>
             </div>
+        </div>
   
 
     )
