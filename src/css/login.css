@@ -11,9 +11,9 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 400px;
+    padding-bottom: 80px;
     display: block;
-    border-radius: 1px;
+    border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20vh;
@@ -28,10 +28,22 @@
     padding: 25px 10px 10px;
     margin-top: 10px;
     max-width: 250px;
+    border-radius: 5px;
+    border: none;
     color: white;
-    background-color: rgba(0, 0, 0, 0.726);
-
+    background-color: rgba(56, 56, 56, 0.726);
 }
+
+.login-container input:focus{
+    background-color: rgba(92, 92, 92, 0.726);
+    outline: none;
+}
+
+.login-container input:valid{
+    background-color: rgba(92, 92, 92, 0.726);
+    outline: none;
+}
+
 .login-container label{
     margin-left: 62px;
 }
@@ -40,7 +52,7 @@
     margin-left: 62px;
     margin-top: 10px;
     padding: 15px 1px;
-    max-width: 275px;
+    max-width: 270px;
     border-radius: 2px;
     border: none;
     background-color: #e50914;
@@ -71,4 +83,30 @@
 
 .float-label .Active {
     transform: translate(8px, 18px) scale(0.85);
+}
+
+.invalid{
+    box-shadow: inset 0px -3px #e87c03;
+}
+
+.login-error-msg{
+    font-size: 12px;
+    color: #e87c03;
+    margin-left: 65px;
+    margin-top: 5px;
+    max-width: 250px;
+}
+
+
+.signup-link-container, .forgot-password-container {
+    display: flex;
+    align-items: center;
+    margin-left: 63px;
+    margin-top: 15px;
+    max-width: 272px;
+}
+
+.signup-link-container p, .forgot-password-container p{
+    color: #737373;
+    margin-right: 10px;
 }

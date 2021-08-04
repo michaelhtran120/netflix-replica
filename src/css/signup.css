@@ -1,3 +1,4 @@
+
 .signup-background {
     position: absolute;
     left: 0;
@@ -19,32 +20,69 @@
     width: 400px;
     /* height: 400px; */
     display: block;
-    border-radius: 1px;
+    border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15vh;
+    margin-top: 20vh;
     background-color: rgba(0, 0, 0, 0.836)
 }
 .signup-container form{
     display: flex;
     flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
 }
+
+.signup-float-label{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    position: relative;
+}
+
+.signup-float-label label{
+    position: absolute;
+    transform: translate(8px, 12px) scale(1);
+    transform-origin: top left;
+    transition: all 0.2s ease-out;
+    margin-left: 45px;
+}
+
+.signup-float-label:focus-within label {
+    transform: translate(3px, -4px) scale(0.95);
+  }
+
+  .signup-float-label .Active {
+    transform: translate(4px, -4px) scale(0.95);
+}
+
 .signup-container input{
-    margin-left: 62px;
-    padding: 18px 10px 18px;
-    /* margin-top: 10px; */
+    margin-left: 45px;
+    padding: 25px 15px 12px;
+    border-radius: 5px;
+    border: none;
     max-width: 250px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.726);
+    background-color: rgba(56, 56, 56, 0.726);
+}
+.signup-container input:focus{
+    background-color: rgba(92, 92, 92, 0.726);
+    outline: none;
+}
 
+.signup-container input:valid{
+    background-color: rgba(92, 92, 92, 0.726);
+    outline: none;
 }
-.signup-container label{
-    margin-left: 52px;
+
+.invalid{
+    box-shadow: inset 0px -3px #e87c03;
 }
+
 
 .signup-container button {
-    margin-left: 62px;
-    margin-top: 10px;
+    margin-left: 55px;
+    margin-top: 20px;
     padding: 15px 1px;
     max-width: 275px;
     border-radius: 2px;
@@ -53,7 +91,32 @@
 
 }
 
-.signup-title{
-    margin-left: 52px;
+.signup-title {
+    margin-left: 45px;
     padding: 40px 18px 0px;
+}
+
+.error-msg{
+    font-size: 12px;
+    color: #e87c03;
+    margin-left: 48px;
+    max-width: 250px;
+}
+
+.login-link-container{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.login-link-container p {
+    color: #737373
+}
+
+.login-link{
+    text-decoration: none;
+}
+
+.login-link:hover{
+    text-decoration: underline;
 }

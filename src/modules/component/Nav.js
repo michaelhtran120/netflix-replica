@@ -58,8 +58,8 @@ const Nav = () => {
       <div className='avatar-module' style={{display:`${display}`}}>
         <p>{currentUser.email}</p>
         <hr/>
-        <p>Account</p>
-        <Link to='/'><p onClick={handleLogOut}>Log Out</p></Link>
+        <Link to='/account' className='account-btn'><p>Account</p></Link>
+        <Link to='/' className='logout-btn'><p onClick={handleLogOut}>Log Out</p></Link>
       </div>
     </div>
   );

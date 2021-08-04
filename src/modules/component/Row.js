@@ -33,12 +33,14 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     if(trailerUrl){
       setTrailerUrl('');
     } else {
-      movieTrailer(movie?.name || movie?.title || '')
+      console.log(movie.name)
+      movieTrailer(movie?.name || movie?.title || movie?.original_name ||'')
       .then((url) => {
         console.log(url)
         const urlParams = new URLSearchParams(new URL(url).search);
         setTrailerUrl(urlParams.get('v'))
-      }).catch(error => console.log(error))
+      }).catch(error => {console.log(error)
+      alert("No video/trailer available")})
     }
   }
 
