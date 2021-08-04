@@ -1,8 +1,8 @@
 import React, {useRef, useState, useEffect} from 'react'
-import '../../css/signup.css'
 import {useAuth} from '../../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
 import '../../css/forgotpassword.css'
+import logo from "../../images/logo.svg"
 
 
 const ForgotPassword = () => {
@@ -31,6 +31,8 @@ const ForgotPassword = () => {
 
 
     return (
+        <>
+        <header><img src={logo} className='forgot-password-logo' /></header>
         <div className='reset-password-container'>
             <h2>Password Reset</h2>
             {error && <p className='forgot-password-error'>{error}</p>}
@@ -41,7 +43,11 @@ const ForgotPassword = () => {
                 <button className='reset-password-btn'>Reset Password</button>
             </form>
             <Link to='/login' className='return-login-btn'>Return to Log In</Link>
+            <br/>
+            <br/>
+            <span>New to Netflix?</span> <Link to='/signup' className='return-signup-btn'>Sign up now!</Link>
         </div>
+        </>
   
 
     )

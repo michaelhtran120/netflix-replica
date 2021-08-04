@@ -12,8 +12,8 @@ const Landing = () => {
         <img className='landing-background' src={background} alt='background' />
         <div className='landing-header'>
           <img className='landing-logo' src={logo} alt='logo' />
-          <Link to="/login">
-            <a className='landing-sign-in-btn'>Sign In</a>
+          <Link to="/login" className='landing-sign-in-btn'>
+            Sign In
           </Link>
         </div>
         <div className='landing-info'>

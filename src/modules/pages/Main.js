@@ -8,9 +8,11 @@ import Footer from "../component/Footer"
 import requests from "../../configs/requests";
 
 const Main = () => {
+  const links = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List']
+
   return (
     <div className='main-container'>
-      <Nav />
+      <Nav links={links}/>
       <Banner />
       <Row
         title='Netflix Originals'

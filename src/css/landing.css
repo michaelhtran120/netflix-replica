@@ -30,13 +30,14 @@
 }
 
 .landing-sign-in-btn {
-  padding: 7px 17px;
+  padding: 10px 20px;
   background-color: #e50914;
   color: white;
   height: 20px;
   border-radius: 4px;
   font-weight: 400;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 .landing-info {

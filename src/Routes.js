@@ -1,4 +1,5 @@
 import React from 'react'
+import './css/route.css'
 import { BrowserRouter, Switch, Route} from 'react-router-dom'
 import {AuthProvider} from './contexts/AuthContext'
 import Landing from "./modules/pages/Landing"
@@ -21,7 +22,7 @@ const Routes = () => {
                     <Route exact path='/forgot-password' component={ForgotPassword}/>
                     <Route exact path='/signup' component={Signup}/>
                     <PrivateRoute exact path='/browse' component={Main} />
-                    <Route exact path='/account'
+                    <PrivateRoute  exact path='/account'
                     component={Account} />
                 </Switch>
             </AuthProvider>

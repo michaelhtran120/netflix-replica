@@ -1,5 +1,4 @@
 import React, {useRef, useState, useEffect} from 'react'
-import '../../css/signup.css'
 import {useAuth} from '../../contexts/AuthContext'
 import {Link, useHistory} from 'react-router-dom'
 import '../../css/login.css'

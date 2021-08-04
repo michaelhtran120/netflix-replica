@@ -5,7 +5,7 @@ import logo from "../../images/logo.svg";
 import avatar from "../../images/avatar.png";
 import "../../css/nav.css";
 
-const Nav = () => {
+const Nav = ( {links} ) => {
   const [show, setShow] = useState(false);
   const [display, setDisplay] = useState('none')
   const [error, setError] = useState('')
@@ -47,11 +47,9 @@ const Nav = () => {
       <div className='nav-links'>
         <img className='logo' src={logo} alt='logo' />
         <div className='nav-link'>
-          <p>Home</p>
-          <p>TV Shows</p>
-          <p>Movies</p>
-          <p>New & Popular</p>
-          <p>My List</p>
+          {links.map((link)=>
+            <p>{link}</p>
+          )}
         </div>
       </div>
       <img className='avatar' src={avatar} alt='avatar' onClick={handleClick}/>
