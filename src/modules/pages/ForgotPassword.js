@@ -1,6 +1,6 @@
-import React, {useRef, useState, useEffect} from 'react'
-import {useAuth} from '../../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
+import React, { useRef, useState } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
+import { Link } from 'react-router-dom'
 import '../../css/forgotpassword.css'
 import logo from "../../images/logo.svg"
 
@@ -32,7 +32,7 @@ const ForgotPassword = () => {
 
     return (
         <>
-        <header><img src={logo} className='forgot-password-logo' /></header>
+        <img src={logo} className='forgot-password-logo' alt='logo'/>
         <div className='reset-password-container'>
             <h2>Password Reset</h2>
             {error && <p className='forgot-password-error'>{error}</p>}
@@ -40,7 +40,7 @@ const ForgotPassword = () => {
             <form onSubmit={handleSubmit}>
                 <label>Email</label>
                 <input type='email' ref={emailRef} required/>
-                <button className='reset-password-btn'>Reset Password</button>
+                <button disabled={loading} className='reset-password-btn'>Reset Password</button>
             </form>
             <Link to='/login' className='return-login-btn'>Return to Log In</Link>
             <br/>

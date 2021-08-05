@@ -10,8 +10,8 @@ const Account = () => {
     const passwordRef = useRef()
     const passwordConfirmedRef = useRef()
     const { currentUser, updatePassword, updateEmail } = useAuth()
-    const [error, setError] = useState('')
-    const [loading, setLoading] = useState(false)
+    const [ error, setError ] = useState('')
+    const [ loading, setLoading ] = useState(false)
     const history = useHistory()
 
     function handleSubmit(e){

@@ -8,7 +8,6 @@ import "../../css/nav.css";
 const Nav = ( {links} ) => {
   const [show, setShow] = useState(false);
   const [display, setDisplay] = useState('none')
-  const [error, setError] = useState('')
   const { currentUser, logout } = useAuth()
   const history = useHistory()
 
@@ -18,9 +17,8 @@ const Nav = ( {links} ) => {
         setShow(true);
       } else setShow(false);
     });
-    // return () => {
-    //   window.removeEventListener("scroll");
-    // };
+    return () => 
+      window.removeEventListener("scroll", null);
   }, []);
 
   const handleClick = () => {
@@ -32,23 +30,17 @@ const Nav = ( {links} ) => {
   }
 
   async function handleLogOut () {
-    setError('')
-
-    try{
       await logout()
       history.push('/')
-    } catch {
-      setError('')
-    }
-
   }
+
   return (
     <div className={`nav ${show && "nav-black"}`}>
       <div className='nav-links'>
         <img className='logo' src={logo} alt='logo' />
         <div className='nav-link'>
-          {links.map((link)=>
-            <p>{link}</p>
+          {links.map((link, i)=>
+            <p key={i}>{link}</p>
           )}
         </div>
       </div>

@@ -1,8 +1,9 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import background from "../../images/landing-background.jpg";
+import logo from "../../images/logo.svg";
 import '../../css/signup.css'
-import {useAuth} from '../../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext'
+import { Link, useHistory } from 'react-router-dom'
 
 
 const Signup = () => {
@@ -10,10 +11,10 @@ const Signup = () => {
     const passwordRef = useRef()
     const passwordConfirmedRef = useRef()
     const { signup } = useAuth()
-    const [error, setError] = useState('')
-    const [emailError, setEmailError] = useState('')
-    const [loading, setLoading] = useState(false)
-    const [formValue, setFormValue] = useState(
+    const [ error, setError ] = useState('')
+    const [ emailError, setEmailError ] = useState('')
+    const [ loading, setLoading ] = useState(false)
+    const [ formValue, setFormValue ] = useState(
         {
             email: '',
             password: '',
@@ -99,6 +100,7 @@ const Signup = () => {
 
     return (
         <div>
+            <img className='signup-logo' src={logo} alt='logo'/>
             <img className='signup-background' src={background} alt='background' />
             <div className='signup-container'>
                 <h1 className='signup-title'>Sign Up</h1>

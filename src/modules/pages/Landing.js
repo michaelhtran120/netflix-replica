@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import "../../css/landing.css";
 import logo from "../../images/logo.svg";
 import background from "../../images/landing-background.jpg";

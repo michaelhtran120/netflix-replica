@@ -1,20 +1,21 @@
-import React, {useRef, useState, useEffect} from 'react'
-import {useAuth} from '../../contexts/AuthContext'
-import {Link, useHistory} from 'react-router-dom'
+import React, { useRef, useState, useEffect } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
+import { Link, useHistory } from 'react-router-dom'
 import '../../css/login.css'
 import background from "../../images/landing-background.jpg";
+import logo from "../../images/logo.svg";
 
 
 const Login = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { login, currentUser } = useAuth()
-    const [error, setError] = useState('')
-    const [emailError, setEmailError] = useState('')
-    const [loading, setLoading] = useState(false)
-    const [isEmailActive, setIsEmailActive] = useState(false);
-    const [isPasswordActive, setIsPasswordActive] = useState(false);
-    const [formValue, setFormValue] = useState(
+    const { login } = useAuth()
+    const [ error, setError ] = useState('')
+    const [ emailError, setEmailError ] = useState('')
+    const [ loading, setLoading ] = useState(false)
+    const [ isEmailActive, setIsEmailActive ] = useState(false);
+    const [ isPasswordActive, setIsPasswordActive ] = useState(false);
+    const [ formValue, setFormValue ] = useState(
         {
             email: '',
             password: ''
@@ -64,8 +65,8 @@ const Login = () => {
     }, [formValue.email, formValue.password])
 
     function validateEmail(email) {
-        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
+        const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regex.test(email);
       }
 
      function handleEmailBlur(e) {
@@ -79,7 +80,8 @@ const Login = () => {
 
 
     return (
-        <div className='login'>
+        <div>
+            <img className='login-logo' src={logo} alt='logo'/>
             <img className='login-background' src={background} alt='background' />
             <div className='login-container'>
                 <h1 className='login-title'>Log In</h1>
