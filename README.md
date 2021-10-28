@@ -9,6 +9,7 @@ Also the list of movies were taken from TMDB so it does not truly reflect Netfli
 Utilize Firebase for backend.
 
 ## How to Use
+[Live Demo](https://michaelhtran120.github.io/netflix-replica/browse)
 
 Create a new account and password. There is no email confirmation required so you can use a fake email.
 
